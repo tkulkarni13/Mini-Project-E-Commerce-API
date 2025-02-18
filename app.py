@@ -3,10 +3,11 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from marshmallow import fields
 from marshmallow import ValidationError
+from password import password
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] =\
-    'mysql+mysqlconnector://root:SmallDog9!@localhost/e_commerce_db'
+    f'mysql+mysqlconnector://root:{password}@localhost/e_commerce_db'
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 
